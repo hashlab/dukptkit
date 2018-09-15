@@ -26,11 +26,11 @@ var questions = []*survey.Question{
 }
 
 func init() {
-	rootCmd.AddCommand(combinedKeyCmd)
+	rootCmd.AddCommand(combineCmd)
 }
 
-var combinedKeyCmd = &cobra.Command{
-	Use:   "combined-key",
+var combineCmd = &cobra.Command{
+	Use:   "combine",
 	Short: "Generates a combined key along with it's KCV using 3 component keys",
 	Run: func(cmd *cobra.Command, args []string) {
 		answers := struct {

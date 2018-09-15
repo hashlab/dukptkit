@@ -11,12 +11,12 @@ import (
 var forceOdd bool
 
 func init() {
-	rootCmd.AddCommand(componentKeyCmd)
-	componentKeyCmd.Flags().BoolVarP(&forceOdd, "force-odd", "f", false, "Force odd parity")
+	rootCmd.AddCommand(generateComponentCmd)
+	generateComponentCmd.Flags().BoolVarP(&forceOdd, "force-odd", "f", false, "Force odd parity")
 }
 
-var componentKeyCmd = &cobra.Command{
-	Use:   "component-key",
+var generateComponentCmd = &cobra.Command{
+	Use:   "generate-component",
 	Short: "Generates a component key along with it's KCV",
 	Run: func(cmd *cobra.Command, args []string) {
 		keyBytes, key, err := lib.GenerateComponentKey(16, forceOdd)
