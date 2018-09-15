@@ -21,7 +21,7 @@ $ go get -u github.com/hashlab/hsmkit
 Generating a component key
 
 ```bash
-$ hsmkit component-key --force-odd
+$ hsmkit generate-component --force-odd
 
 Component Key: 1CAD7AD361548AA1628FAB31A71C6B80
 KCV: 46F084
@@ -30,7 +30,7 @@ KCV: 46F084
 Combining 3 component keys to generate a combined key
 
 ```bash
-$ hsmkit combined-key
+$ hsmkit combine
 
 ? Enter the component key 1: ********************************
 ? Enter the component key 2: ********************************
