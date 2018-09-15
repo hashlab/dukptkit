@@ -79,5 +79,6 @@ var combineCmd = &cobra.Command{
 		fmt.Println("")
 		fmt.Printf("Combined Key: %s\n", cKey)
 		fmt.Printf("Final KCV: %s\n", cKcv)
+		fmt.Printf("Odd Parity: %t\n", lib.IsOddParityAdjusted(cKeyBytes))
 	},
 }
