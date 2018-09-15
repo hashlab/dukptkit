@@ -4,8 +4,8 @@ build:
 
 .PHONY: component
 component:
-	@bin/cli component-key --force-odd
+	@bin/cli generate-component --force-odd
 
 .PHONY: combine
 combine:
-	@bin/cli combined-key
+	@bin/cli combine
