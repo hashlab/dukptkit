@@ -10,6 +10,36 @@
 
 > A golang tool to generate keys required for using an HSM
 
+## Installation
+
+```bash
+$ go get -u github.com/hashlab/hsmkit
+```
+
+## Usage
+
+Generating a component key
+
+```bash
+$ hsmkit component-key --force-odd
+
+Component Key: 1CAD7AD361548AA1628FAB31A71C6B80
+KCV: 46F084
+```
+
+Combining 3 component keys to generate a combined key
+
+```bash
+$ hsmkit combined-key
+
+? Enter the component key 1: ********************************
+? Enter the component key 2: ********************************
+? Enter the component key 3: ********************************
+
+Combined Key: DCCB3B10D6402902F15B1A151CF16723
+Final KCV: 315381
+```
+
 ## Getting Started
 
 1º Clone hsmkit repo
