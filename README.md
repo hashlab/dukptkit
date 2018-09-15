@@ -25,6 +25,7 @@ $ hsmkit generate-component --force-odd
 
 Component Key: 1CAD7AD361548AA1628FAB31A71C6B80
 KCV: 46F084
+Odd Parity: true
 ```
 
 Combining 3 component keys to generate a combined key
@@ -38,6 +39,7 @@ $ hsmkit combine
 
 Combined Key: DCCB3B10D6402902F15B1A151CF16723
 Final KCV: 315381
+Odd Parity: true
 ```
 
 ## Getting Started
