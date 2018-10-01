@@ -1,6 +1,6 @@
 package main
 
-import "github.com/hashlab/hsmkit/cmd"
+import "github.com/hashlab/dukptkit/cmd"
 
 func main() {
 	cmd.Execute()

@@ -5,7 +5,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/hashlab/hsmkit/lib"
+	"github.com/hashlab/dukptkit/lib"
 	"github.com/spf13/cobra"
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )

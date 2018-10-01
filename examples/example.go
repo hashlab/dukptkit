@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/hashlab/hsmkit/lib"
+	"github.com/hashlab/dukptkit/lib"
 )
 
 func main() {

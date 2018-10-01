@@ -8,10 +8,10 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "hsmkit",
-	Short: "HSMKit is a tool for generating keys",
-	Long: `A golang tool to generate keys required for using an HSM.
-Complete documentation is available at https://github.com/hashlab/hsmkit`,
+	Use:   "dukptkit",
+	Short: "DUKPTKit is a tool for generating keys",
+	Long: `A golang tool to generate keys required for using 3DES-DUKPT.
+Complete documentation is available at https://github.com/hashlab/dukptkit`,
 }
 
 // Execute is a function for running the command line tool

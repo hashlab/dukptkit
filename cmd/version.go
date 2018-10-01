@@ -12,8 +12,8 @@ func init() {
 
 var versionCmd = &cobra.Command{
 	Use:   "version",
-	Short: "Print the version number of HSMKit",
+	Short: "Print the version number of DUKPTKit",
 	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("HSMKit v1.0.0")
+		fmt.Println("DUKPTKit v1.0.0")
 	},
 }

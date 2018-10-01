@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/hashlab/hsmkit/lib"
+	"github.com/hashlab/dukptkit/lib"
 	"github.com/spf13/cobra"
 )
 
