@@ -18,6 +18,14 @@ $ go get -u github.com/hashlab/dukptkit
 
 ## Usage
 
+Generating a BDK identifier (KSI)
+
+```bash
+$ dukptkit generate-ksi
+
+BDK identifier (KSI): C6761EB843
+```
+
 Generating a component key
 
 ```bash

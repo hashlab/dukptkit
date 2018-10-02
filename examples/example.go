@@ -7,6 +7,8 @@ import (
 )
 
 func main() {
+	ksi, _ := lib.GenerateKSI(5)
+
 	keyBytes1, key1, _ := lib.GenerateComponentKey(16, true)
 	keyBytes2, key2, _ := lib.GenerateComponentKey(16, true)
 	keyBytes3, key3, _ := lib.GenerateComponentKey(16, true)
@@ -17,6 +19,9 @@ func main() {
 
 	cKeyBytes, cKey := lib.GenerateCombinedKey(keyBytes1, keyBytes2, keyBytes3)
 	cKcvBytes, cKcv, _ := lib.CalculateKcv(cKeyBytes)
+
+	fmt.Println("KSI: ")
+	fmt.Println(ksi)
 
 	fmt.Println("Component key 1: ")
 	fmt.Println(keyBytes1)
