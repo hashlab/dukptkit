@@ -4,6 +4,7 @@ import (
 	b "bytes"
 	"crypto/des"
 	"encoding/hex"
+	"regexp"
 )
 
 // HexToBytes is responsible for converting hex strings into an array of bytes
@@ -15,6 +16,19 @@ func HexToBytes(str string) ([]byte, error) {
 	}
 
 	return data, nil
+}
+
+// FormatString is responsible for formatting a hex string to a human readable format
+func FormatString(str string) (string, error) {
+	re, err := regexp.Compile(`(.{4})`)
+
+	if err != nil {
+		return "", err
+	}
+
+	s := re.ReplaceAllString(str, "$1 ")
+
+	return s, err
 }
 
 // IsOddParityAdjusted is responsible for checking if an array of bytes is adjusted with odd parity
