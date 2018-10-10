@@ -23,7 +23,7 @@ Generating a BDK identifier (KSI)
 ```bash
 $ dukptkit generate-ksi
 
-BDK identifier (KSI): C6761EB843
+BDK identifier (KSI): D56D 0AFA 76
 ```
 
 Generating a component key
@@ -31,22 +31,26 @@ Generating a component key
 ```bash
 $ dukptkit generate-component --force-odd
 
-Component Key: 1CAD7AD361548AA1628FAB31A71C6B80
-KCV: 46F084
+Component Key: AD31 4062 6EEF BCE0 E313 5B45 73EA F794
+KCV: D1FD6C
 Odd Parity: true
 ```
 
 Combining 3 component keys to generate a combined key
 
 ```bash
-$ dukptkit combine
+$ dukptkit combine --show-combined-key
 
 ? Enter the component key 1: ********************************
 ? Enter the component key 2: ********************************
 ? Enter the component key 3: ********************************
 
-Combined Key: DCCB3B10D6402902F15B1A151CF16723
-Final KCV: 315381
+KCV from Component Key 1: 461F68
+KCV from Component Key 2: 2EC7BC
+KCV from Component Key 3: B69F03
+
+Combined Key: B329 9B2A 38BC 9D8C 3EEC 0BCE 9237 F17F
+Final KCV: 9F1DBF
 Odd Parity: true
 ```
 
