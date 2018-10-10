@@ -26,6 +26,13 @@ var generateKSICmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		fmt.Printf("BDK identifier (KSI): %s\n", ksi)
+		formatedString, err := lib.FormatString(ksi)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			os.Exit(1)
+		}
+
+		fmt.Printf("BDK identifier (KSI): %s\n", formatedString)
 	},
 }

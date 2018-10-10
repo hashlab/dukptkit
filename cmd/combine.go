@@ -10,6 +10,8 @@ import (
 	survey "gopkg.in/AlecAivazis/survey.v1"
 )
 
+var showCombinedKey bool
+
 var questions = []*survey.Question{
 	{
 		Name:   "component-key-1",
@@ -27,6 +29,7 @@ var questions = []*survey.Question{
 
 func init() {
 	rootCmd.AddCommand(combineCmd)
+	combineCmd.Flags().BoolVarP(&showCombinedKey, "show-combined-key", "s", false, "Show combined key")
 }
 
 var combineCmd = &cobra.Command{
@@ -76,8 +79,46 @@ var combineCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
+		_, cK1, err := lib.CalculateKcv(keyBytes1)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			os.Exit(1)
+		}
+
+		_, cK2, err := lib.CalculateKcv(keyBytes2)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			os.Exit(1)
+		}
+
+		_, cK3, err := lib.CalculateKcv(keyBytes3)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			os.Exit(1)
+		}
+
+		formatedString, err := lib.FormatString(cKey)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			os.Exit(1)
+		}
+
 		fmt.Println("")
-		fmt.Printf("Combined Key: %s\n", cKey)
+		fmt.Printf("KCV from Component Key 1: %s\n", cK1)
+		fmt.Printf("KCV from Component Key 2: %s\n", cK2)
+		fmt.Printf("KCV from Component Key 3: %s\n", cK3)
+		fmt.Println("")
+
+		if showCombinedKey {
+			fmt.Printf("Combined Key: %s\n", formatedString)
+		} else {
+			fmt.Printf("Combined Key: %s\n", "Top Secret!")
+		}
+
 		fmt.Printf("Final KCV: %s\n", cKcv)
 		fmt.Printf("Odd Parity: %t\n", lib.IsOddParityAdjusted(cKeyBytes))
 	},

@@ -33,7 +33,14 @@ var generateComponentCmd = &cobra.Command{
 			os.Exit(1)
 		}
 
-		fmt.Printf("Component Key: %s\n", key)
+		formatedString, err := lib.FormatString(key)
+
+		if err != nil {
+			fmt.Println(err.Error())
+			os.Exit(1)
+		}
+
+		fmt.Printf("Component Key: %s\n", formatedString)
 		fmt.Printf("KCV: %s\n", kcv)
 		fmt.Printf("Odd Parity: %t\n", lib.IsOddParityAdjusted(keyBytes))
 	},
